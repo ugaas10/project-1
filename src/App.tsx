@@ -105,215 +105,7 @@ interface Document {
   url?: string;
 }
 
-const initialDocs: Document[] = [
-  {
-    id: 'init-1',
-    name: 'Mogadishu_Highway_A42_Centerline.dwg',
-    size: '12.4 MB',
-    date: '2026-05-25',
-    tags: ['Naqshado', 'CAD', 'Mogadishu', 'Highway'],
-    type: 'dwg',
-    status: 'Approved',
-    uploadedBy: 'Member',
-    uploaderName: 'Eng. Ahmed Ali',
-    Owner: 'Mogadishu Municipality',
-    ComplianceCode: 'MOG-HW-042',
-    VersionHistory: 'v1.2 (Active)'
-  },
-  {
-    id: 'init-2',
-    name: 'Hargeisa_Commercial_Complex_Drainage.pdf',
-    size: '4.8 MB',
-    date: '2026-04-15',
-    tags: ['Reports', 'PDF', 'Hargeisa', 'Drainage'],
-    type: 'pdf',
-    status: 'Approved',
-    uploadedBy: 'Member',
-    uploaderName: 'Eng. Sarah J.',
-    Owner: 'Hargeisa Land Dept',
-    ComplianceCode: 'HRG-DR-889',
-    VersionHistory: 'v2.0 (Active)'
-  },
-  {
-    id: 'init-3',
-    name: 'Kismayo_River_Demarcation_Final.dxf',
-    size: '8.1 MB',
-    date: '2026-05-20',
-    tags: ['Naqshado', 'CAD', 'Kismayo', 'Riverside'],
-    type: 'dxf',
-    status: 'Approved',
-    uploadedBy: 'Member',
-    uploaderName: 'Eng. Hassan M.',
-    Owner: 'Kismayo Ministry of Works',
-    ComplianceCode: 'KIS-RD-112',
-    VersionHistory: 'v1.0 (Draft)'
-  },
-  {
-    id: 'init-4',
-    name: 'Berbera_Port_Zoning_Subdivision.pdf',
-    size: '15.2 MB',
-    date: '2026-03-10',
-    tags: ['Reports', 'PDF', 'Berbera', 'Zoning'],
-    type: 'pdf',
-    status: 'Approved',
-    uploadedBy: 'Admin',
-    uploaderName: 'Admin Maamule',
-    Owner: 'Berbera Port Authority',
-    ComplianceCode: 'BER-PZ-903',
-    VersionHistory: 'v1.1 (Active)'
-  },
-  {
-    id: 'init-5',
-    name: 'Somalia_Soil_Topography_Survey_2026.pdf',
-    size: '22.1 MB',
-    date: '2026-05-01',
-    tags: ['Reports', 'Maps', 'Topography'],
-    type: 'pdf',
-    status: 'Approved',
-    uploadedBy: 'System',
-    uploaderName: 'Drone GIS Auto-Scanner',
-    Owner: 'Federal Land Agency',
-    ComplianceCode: 'SOM-ST-455',
-    VersionHistory: 'v1.0 (Active)'
-  },
-  {
-    id: 'init-6',
-    name: 'Mogadishu_District_Cadastral_Map.dwg',
-    size: '18.7 MB',
-    date: '2026-05-12',
-    tags: ['Naqshado', 'CAD', 'Maps'],
-    type: 'dwg',
-    status: 'Approved',
-    uploadedBy: 'Admin',
-    uploaderName: 'Eng. Mohamed Abduqaadir',
-    Owner: 'Somali GIS Authority',
-    ComplianceCode: 'MOG-CD-231',
-    VersionHistory: 'v3.2 (Active)'
-  },
-  {
-    id: 'init-7',
-    name: 'Engineering_Compliance_Checklist.pdf',
-    size: '1.2 MB',
-    date: '2026-02-18',
-    tags: ['Cadeymo', 'PDF', 'Compliance'],
-    type: 'pdf',
-    status: 'Approved',
-    uploadedBy: 'System',
-    uploaderName: 'Auto-Compliance Parser',
-    Owner: 'Federal Land Agency',
-    ComplianceCode: 'ENG-CC-101',
-    VersionHistory: 'v1.0 (Active)'
-  }
-];
 
-const initialProjects = [
-  { 
-    id: 1, 
-    name: 'Highway A42 Survey', 
-    location: 'Mogadishu, Somalia', 
-    lat: 2.0469, 
-    lng: 45.3182,
-    status: 'active', 
-    health: 'On Track',
-    progress: 75,
-    docRate: 88,
-    budget: '$45,000',
-    daysRemaining: 12,
-    engineer: 'Eng. Ahmed Ali',
-    milestones: [
-      { label: 'Site Init', status: 'done', width: '25%' },
-      { label: 'Topo Scan', status: 'done', width: '25%' },
-      { label: 'Analysis', status: 'active', width: '25%' },
-      { label: 'Review', status: 'todo', width: '25%' },
-    ],
-    docs: 24,
-    date: '2026-05-25',
-    bg: 'bg-primary/5',
-    color: '#06b6d4',
-    desc: 'Complete topographical survey for the new highway extension project. Includes centerline layout and drainage study.',
-    coords: '2.0469°N, 45.3182°E',
-    users: 3,
-    pending: 3
-  },
-  { 
-    id: 2, 
-    name: 'Commercial Complex Plot', 
-    location: 'Hargeisa, Somalia', 
-    lat: 9.5624, 
-    lng: 44.0770,
-    status: 'active', 
-    health: 'Delayed',
-    progress: 45,
-    docRate: 30,
-    budget: '$120,000',
-    daysRemaining: 4,
-    engineer: 'Eng. Sarah J.',
-    milestones: [
-      { label: 'Boundary', status: 'done', width: '33%' },
-      { label: 'Subdivision', status: 'active', width: '33%' },
-      { label: 'Permitting', status: 'todo', width: '33%' },
-    ],
-    docs: 12,
-    date: '2026-04-15',
-    bg: 'bg-cyan-500/5',
-    color: '#34d399',
-    desc: 'Boundary survey and subdivision planning for the new commercial development zone. Includes site grading details.',
-    coords: '9.5600°N, 44.0650°E',
-    users: 2,
-    pending: 1
-  },
-  { 
-    id: 3, 
-    name: 'Riverside Cadastral Mapping', 
-    location: 'Kismayo, Somalia', 
-    lat: -0.3582, 
-    lng: 42.5454,
-    status: 'pending', 
-    health: 'On Track',
-    progress: 15,
-    docRate: 10,
-    budget: '$28,500',
-    daysRemaining: 145,
-    engineer: 'Eng. Hassan M.',
-    milestones: [
-      { label: 'Registry', status: 'active', width: '50%' },
-      { label: 'Mapping', status: 'todo', width: '50%' },
-    ],
-    docs: 18,
-    date: '2026-05-20',
-    bg: 'bg-amber-500/5',
-    color: '#fbbf24',
-    desc: 'Detailed cadastral survey for riverside property demarcation and flood zone analysis.',
-    coords: '-0.3582°N, 42.5454°E',
-    users: 3,
-    pending: 0
-  },
-  { 
-    id: 4, 
-    name: 'Industrial Zone Subdivision', 
-    location: 'Berbera, Somalia', 
-    lat: 10.4396, 
-    lng: 45.0135,
-    status: 'completed', 
-    health: 'Completed',
-    progress: 100,
-    docRate: 100,
-    budget: '$85,200',
-    daysRemaining: 0,
-    engineer: 'Eng. Aisha K.',
-    milestones: [
-      { label: 'Survey', status: 'done', width: '100%' },
-    ],
-    docs: 45,
-    date: '2026-03-10',
-    bg: 'bg-emerald-500/5',
-    color: '#10b981',
-    desc: 'Comprehensive cadastral mapping and industrial zoning subdivision for new trade terminal expansion.',
-    coords: '10.4396°N, 45.0135°E',
-    users: 4,
-    pending: 0
-  }
-];
 
 function AppContent() {
   const [currentUser, setCurrentUser] = useState<{ email: string; role: string; name: string } | null>(() => {
@@ -321,7 +113,7 @@ function AppContent() {
     return saved ? JSON.parse(saved) : null;
   });
 
-  const [projects, setProjects] = useOfflineCache<any[]>('geodms_projects_data', initialProjects);
+  const [projects, setProjects] = useOfflineCache<any[]>('geodms_projects_data', []);
   const [isQuickCreateOpen, setIsQuickCreateOpen] = useState(false);
 
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
@@ -353,7 +145,7 @@ function AppContent() {
   ]);
   
   // Document Management States
-  const [documents, setDocuments] = useOfflineCache<Document[]>('geodms_documents', initialDocs);
+  const [documents, setDocuments] = useOfflineCache<Document[]>('geodms_documents', []);
   const [selectedDocs, setSelectedDocs] = useState<string[]>([]);
   const [docsSubTab, setDocsSubTab] = useState<'active' | 'deleted'>('active');
   const [previewDoc, setPreviewDoc] = useState<Document | null>(null);
@@ -370,28 +162,6 @@ function AppContent() {
   // Real-time synchronization of projects and documents with Firebase Firestore
   useEffect(() => {
     if (!currentUser) return;
-
-    const initializeDatabaseIfNeeded = async () => {
-      try {
-        const { data: statusSnap, error: statusErr } = await supabase.from('system_config').select('*').eq('id', 'status').single();
-        
-        if (statusErr && statusErr.code === 'PGRST116') {
-          console.log("Database status doc not found. Seeding initial projects and documents...");
-          for (const prj of initialProjects) {
-            await supabase.from('projects').insert({ ...prj, id: String(prj.id) });
-          }
-          for (const d of initialDocs) {
-            await supabase.from('documents').insert(d);
-          }
-          await supabase.from('system_config').insert({ id: 'status', seeded: true });
-          console.log("Database seeded successfully.");
-        }
-      } catch (err) {
-        console.error("Failed to check status or seed database: ", err);
-      }
-    };
-
-    initializeDatabaseIfNeeded();
 
     const fetchProjects = async () => {
       const { data } = await supabase.from('projects').select('*');
