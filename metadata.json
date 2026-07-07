@@ -1,0 +1,6 @@
+{
+  "name": "GeoDMS Geometry",
+  "description": "Engineering-grade Document Management System for digital archiving and smart workflow automation (Geometry Edition).",
+  "requestFramePermissions": ["microphone", "camera", "geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
