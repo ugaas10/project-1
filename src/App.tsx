@@ -850,15 +850,15 @@ function AppContent() {
             if (currentUser) {
               if (bulkActionType === 'archive') {
                 selectedDocs.forEach((docId) => {
-                  supabase.from('documents').update({ isDeleted: true }).eq('id', docId).catch(err => {
-                    console.error("Firestore soft-delete error: ", err);
+                  supabase.from('documents').update({ isDeleted: true }).eq('id', docId).then(({ error }) => {
+                    if (error) console.error("Supabase soft-delete error: ", error);
                   });
                 });
                 showToast(t('language') === 'so' ? `${selectedDocs.length} dukuminti waa la kaydiyay` : `${selectedDocs.length} document(s) archived successfully`, 'success');
               } else {
                 selectedDocs.forEach((docId) => {
-                  supabase.from('documents').delete().eq('id', docId).catch(err => {
-                    console.error("Firestore permanent delete error: ", err);
+                  supabase.from('documents').delete().eq('id', docId).then(({ error }) => {
+                    if (error) console.error("Supabase permanent delete error: ", error);
                   });
                 });
                 showToast(t('language') === 'so' ? `${selectedDocs.length} dukuminti si joogto ah ayaa loo tirtiray` : `${selectedDocs.length} document(s) permanently deleted`, 'success');
